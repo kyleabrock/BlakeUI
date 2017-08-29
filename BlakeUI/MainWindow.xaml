@@ -1,0 +1,261 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:tk="http://schemas.microsoft.com/wpf/2008/toolkit"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="clr-namespace:Blake.UI" 
+	xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+    xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Luna" x:Class="Blake.UI.MainWindow"
+    mc:Ignorable="d"
+	x:Name="Window"
+	Title="ControlsWindow"
+	Width="1024" Height="720">
+	<Window.Resources>
+	
+		<LinearGradientBrush x:Key="CheckRadioFillNormal">
+			<GradientStop Color="#FFD2D4D2" Offset="0"/>
+			<GradientStop Color="#FFFFFFFF" Offset="1"/>
+		</LinearGradientBrush>
+		<LinearGradientBrush x:Key="CheckRadioStrokeNormal">
+			<GradientStop Color="#FF004C94" Offset="0"/>
+			<GradientStop Color="#FF003C74" Offset="1"/>
+		</LinearGradientBrush>
+		<Style x:Key="EmptyCheckBoxFocusVisual">
+			<Setter Property="Control.Template">
+				<Setter.Value>
+					<ControlTemplate>
+						<Rectangle Margin="1" SnapsToDevicePixels="true" Stroke="Black" StrokeThickness="1" StrokeDashArray="1 2"/>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="CheckRadioFocusVisual">
+			<Setter Property="Control.Template">
+				<Setter.Value>
+					<ControlTemplate>
+						<Rectangle Margin="14,0,0,0" SnapsToDevicePixels="true" Stroke="Black" StrokeThickness="1" StrokeDashArray="1 2"/>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="CheckBoxStyle1" TargetType="{x:Type CheckBox}">
+			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+			<Setter Property="Background" Value="{StaticResource CheckRadioFillNormal}"/>
+			<Setter Property="BorderBrush" Value="{StaticResource CheckRadioStrokeNormal}"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="FocusVisualStyle" Value="{StaticResource EmptyCheckBoxFocusVisual}"/>
+			<Setter Property="FontSize" Value="13.333" />
+			<Setter Property="FontFamily" Value="Segoe UI" />
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type CheckBox}">
+						<BulletDecorator Background="Transparent" SnapsToDevicePixels="true">
+							<BulletDecorator.Bullet>
+								<Microsoft_Windows_Themes:BulletChrome BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" IsChecked="{TemplateBinding IsChecked}" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderPressed="{TemplateBinding IsPressed}"/>
+							</BulletDecorator.Bullet>
+							<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" TextBlock.FontFamily="{TemplateBinding FontFamily}" TextBlock.FontSize="{TemplateBinding FontSize}"/>
+						</BulletDecorator>
+						<ControlTemplate.Triggers>
+							<Trigger Property="HasContent" Value="true">
+								<Setter Property="FocusVisualStyle" Value="{StaticResource CheckRadioFocusVisual}"/>
+								<Setter Property="Padding" Value="2,0,0,0"/>
+							</Trigger>
+							<Trigger Property="IsEnabled" Value="false">
+								<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	
+	</Window.Resources>
+    <Window.DataContext>
+        <ui:MainWindowViewModel />
+    </Window.DataContext>
+
+    <Grid>
+        <TabControl Margin="8" Style="{StaticResource TabControlDefaultStyle}">
+            <TabItem Header="TextBoxes" Style="{StaticResource TabItemDefaultStyle}">
+            	<StackPanel Orientation="Vertical">
+            		<TextBlock Text="TextBoxStyle" />
+            		<TextBox HorizontalAlignment="Left" Height="24" Margin="4" Text="TextBox Enabled" VerticalAlignment="Top" Width="350" 
+            			Style="{StaticResource TextBoxStyle}" />
+					<TextBox HorizontalAlignment="Left" Height="24" Margin="4" Text="TextBox Enabled" VerticalAlignment="Top" Width="350"
+            			Style="{StaticResource TextBoxStyle}" />
+                    
+            		<TextBlock Text="TextBoxStyle IsEnabled=False" />
+            		<TextBox HorizontalAlignment="Left" Height="24" Margin="4" Text="TextBox Disabled" IsEnabled="False" VerticalAlignment="Top" Width="350" 
+            			Style="{StaticResource TextBoxStyle}" />
+                    
+            		<TextBlock Text="PasswordBoxStyle" />
+            		<PasswordBox HorizontalAlignment="Left" Height="24" Margin="4" VerticalAlignment="Top" Width="350" Password="password"
+            			Style="{StaticResource PasswordBoxStyle}" />
+                    
+            		<TextBlock Text="PasswordBoxStyle IsEnabled=False" />
+            		<PasswordBox HorizontalAlignment="Left" Height="24" Margin="4" VerticalAlignment="Top" Width="350" Password="password"
+            			Style="{StaticResource PasswordBoxStyle}" IsEnabled="False" />
+                    
+            		<TextBlock Text="RichTextBoxStyle" />
+            		<RichTextBox HorizontalAlignment="Left" Margin="4" VerticalAlignment="Top" Width="350" Height="64" 
+            			Style="{StaticResource RichTextBoxStyle}" VerticalScrollBarVisibility="Auto" >
+            			<RichTextBox.ContextMenu>
+            				<ContextMenu Style="{DynamicResource ContextMenuStyle1}"/>
+            			</RichTextBox.ContextMenu>
+            		</RichTextBox>
+
+            		<TextBlock Text="ComboBoxStyle" />
+            		<ComboBox HorizontalAlignment="Left" Height="24" Margin="4" VerticalAlignment="Top" Width="350" IsEditable="False"
+            			Style="{StaticResource ComboBoxStyle}" SelectedIndex="0">
+            			<ComboBoxItem Content="Test" />
+            			<ComboBoxItem Content="Test 1" />
+            			<ComboBoxItem Content="Test 2" />
+            			<ComboBoxItem Content="Test 3" />
+            		</ComboBox>
+
+            		<TextBlock Text="ComboBoxStyle IsEnabled=False" />
+            		<ComboBox HorizontalAlignment="Left" Height="24" Margin="4" VerticalAlignment="Top" Width="350" IsEditable="False"
+            			Style="{StaticResource ComboBoxStyle}" IsEnabled="False" SelectedIndex="0">
+            			<ComboBoxItem Content="Test" />
+            			<ComboBoxItem Content="Test 1" />
+            			<ComboBoxItem Content="Test 2" />
+            			<ComboBoxItem Content="Test 3" />
+            		</ComboBox>
+
+            		<TextBlock Text="ComboBoxStyle IsEditable=True" />
+            		<ComboBox HorizontalAlignment="Left" Height="24" Margin="4" VerticalAlignment="Top" Width="350" IsEditable="True"
+            			Text="Editable Combobox" Style="{StaticResource ComboBoxStyle}">
+            			<ComboBoxItem Content="Test" />
+            			<ComboBoxItem Content="Test 1" />
+            			<ComboBoxItem Content="Test 2" />
+            			<ComboBoxItem Content="Test 3" />
+            		</ComboBox>
+                    
+            		<TextBlock Text="ComboBoxStyle IsEditable=True, IsEnabled=False" />
+            		<ComboBox HorizontalAlignment="Left" Height="24" Margin="4" VerticalAlignment="Top" Width="350" IsEditable="True"
+            			Text="Editable Combobox Disabled" IsEnabled="False" Style="{StaticResource ComboBoxStyle}">
+            			<ComboBoxItem Content="Test" />
+            			<ComboBoxItem Content="Test 1" />
+            			<ComboBoxItem Content="Test 2" />
+            			<ComboBoxItem Content="Test 3" />
+            		</ComboBox>
+            		<StackPanel Orientation="Vertical" >
+            			<MenuItem Header="MenuItem" Margin="0" Icon="{DynamicResource DarkBinImage}" Style="{StaticResource MenuItemStyle}"/>
+            			<MenuItem Header="MenuItem" Margin="0" Icon="{DynamicResource DarkReportImage}" Style="{StaticResource MenuItemStyle}"/>
+            		</StackPanel>
+            	</StackPanel>
+            </TabItem>
+            <TabItem Header="Progressbar" Style="{StaticResource TabItemDefaultStyle}">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="ProgressBarStyle" />
+                    <ProgressBar Width="350" HorizontalAlignment="Left" Margin="4" Height="10" Style="{StaticResource ProgressBarStyle}"
+                                 Minimum="0" Maximum="100" Value="{Binding ProgressBarValue}" />
+
+                    <TextBlock Text="RadialProgressBar" />
+                    <ProgressBar Height="64" Width="64" HorizontalAlignment="Left" Style="{StaticResource RadialProgressBar}" Margin="4"
+                                 Minimum="0" Maximum="100" Value="{Binding ProgressBarValue}"/>
+
+                    <TextBlock Text="RadialProgressBar IsIndeterminate=True" />
+                    <ProgressBar Height="64" Width="64" HorizontalAlignment="Left" IsIndeterminate="True" Style="{StaticResource RadialProgressBar}" Margin="4"/>
+					<ProgressBar Height="16" Width="16" HorizontalAlignment="Left" IsIndeterminate="True" Style="{StaticResource RadialXsProgressBar}" Margin="4"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="DataGrid" Style="{StaticResource TabItemDefaultStyle}">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="DataGridDefaultStyle" />
+                    <tk:DataGrid ItemsSource="{Binding Items}" Height="200" Margin="4" VerticalAlignment="Top" Style="{StaticResource DataGridDefaultStyle}">
+                        <tk:DataGrid.Columns>
+                            <tk:DataGridTextColumn Header="Фамилия" Width="150" SortDirection="Ascending" Binding="{Binding LastName}" />
+                            <tk:DataGridTextColumn Header="Имя" Width="150" SortDirection="Descending" Binding="{Binding FirstName}" />
+                            <tk:DataGridTextColumn Header="Отчество" Width="150" SortDirection="Descending" Binding="{Binding Patronymic}" />
+                        </tk:DataGrid.Columns>
+                    </tk:DataGrid>	
+					<ListBox Width="350" HorizontalAlignment="Left" Margin="4,0">
+						<ListBox.ItemTemplate>
+							<DataTemplate>
+								<StackPanel>
+									<CheckBox />
+									<TextBlock />	
+								</StackPanel>
+							</DataTemplate>
+						</ListBox.ItemTemplate>
+						<ListBoxItem Content="Test 1" />
+						<ListBoxItem Content="Test 2" />
+						<ListBoxItem Content="Test 3" />						
+					</ListBox>				
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="ListView" Style="{StaticResource TabItemDefaultStyle}">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="TabControlDefaultStyle" />
+                    <TabControl Margin="4" Height="64" Style="{DynamicResource TabControlDefaultStyle}" >
+                        <TabItem Header="TabItem" Style="{StaticResource TabItemDefaultStyle}">
+                            <Grid />
+                        </TabItem>
+                        <TabItem Header="TabItem" Style="{StaticResource TabItemDefaultStyle}">
+                            <Grid />
+                        </TabItem>
+                    </TabControl>
+
+                    <TextBlock Text="ListViewStyle" />
+                    <ListView ItemsSource="{Binding Items}" Height="200" Margin="4" Style="{StaticResource ListViewStyle}">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Фамилия" DisplayMemberBinding="{Binding LastName}" />
+                                <GridViewColumn Header="Имя" DisplayMemberBinding="{Binding FirstName}" />
+                                <GridViewColumn Header="Отчество" DisplayMemberBinding="{Binding Patronymic}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Buttons" Style="{StaticResource TabItemDefaultStyle}">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <Button Width="100" Height="32" Margin="4" Content="Default Style" Style="{StaticResource ButtonDefaultStyle}" />
+                        <Button Width="100" Height="32" Margin="4" Content="Primary" Style="{StaticResource ButtonPrimaryStyle}" />
+                        <Button Width="100" Height="32" Margin="4" Content="Success" Style="{StaticResource ButtonSuccessStyle}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Width="100" Height="32" Margin="4" Content="Info" Style="{StaticResource ButtonInfoStyle}" />
+                        <Button Width="100" Height="32" Margin="4" Content="Warning" Style="{StaticResource ButtonWarningStyle}"  />
+                        <Button Width="100" Height="32" Margin="4" Content="Danger" Style="{StaticResource ButtonDangerStyle}"  />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Height="40">
+                        <Button Style="{StaticResource ButtonDefaultStyle}" Content="Disabled" Width="100" Margin="4" IsEnabled="False" />
+                        <Button Style="{StaticResource AddButtonNormalStyle}" Margin="4" />
+                        <Button Style="{StaticResource EditButtonNormalStyle}" Margin="4" />
+                        <Button Style="{StaticResource DeleteButtonNormalStyle}" Margin="4" />
+                        <Button Style="{StaticResource ImportButtonNormalStyle}" Margin="4" />
+                        <Button Style="{StaticResource ExportButtonNormalStyle}" Margin="4" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Height="40">
+                        <Button Style="{StaticResource OkButtonNormalStyle}" Margin="4" />
+                        <Button Style="{StaticResource CancelButtonNormalStyle}" Margin="4" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Height="40">
+                        <Button Style="{StaticResource EditButtonSmallStyle}" Margin="4" />
+                        <Button Style="{StaticResource DeleteButtonSmallStyle}" Margin="4" />
+                        <Button Style="{StaticResource ImportButtonSmallStyle}" Margin="4" />
+                        <Button Style="{StaticResource ExportButtonSmallStyle}" Margin="4" />
+                        <Button Style="{StaticResource FilterButtonSmallStyle}" Margin="4" />
+                        <Button Style="{StaticResource MoveButtonSmallStyle}" Margin="4" />
+                    </StackPanel>
+                    <Grid Width="354" HorizontalAlignment="Left">
+                        <TextBox Width="350" Height="32" Margin="4" HorizontalAlignment="Left" VerticalContentAlignment="Center" Style="{StaticResource TextBoxStyle}" />
+                        <Button Content="{StaticResource SearchImage}" Margin="4" Width="32" Height="32" HorizontalAlignment="Right" Style="{StaticResource ButtonInfoStyle}" />
+                    </Grid>
+                    <StackPanel Orientation="Horizontal">
+                        <ToggleButton Margin="4" Style="{DynamicResource SwitchButtonStyle}" />
+                        <ToggleButton Margin="4" Style="{DynamicResource SwitchButtonStyle}" IsChecked="True" />
+                    </StackPanel>
+                    <xctk:DateTimePicker Style="{StaticResource DateTimePickerStyle}" TimePickerShowButtonSpinner="False" 
+                                         Format="ShortDate"
+                                         TimePickerVisibility="Hidden" Width="250" HorizontalAlignment="Left" Margin="4,0,0,0" />
+                    <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="4,0,0,0" Style="{DynamicResource CheckBoxStyle1}"/>
+                </StackPanel> 
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

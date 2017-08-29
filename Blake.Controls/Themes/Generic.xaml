@@ -1,0 +1,341 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Controls/Brushes.xaml" />
+        <ResourceDictionary Source="../Controls/TextBox.xaml" />
+        <ResourceDictionary Source="../Controls/RichTextBox.xaml" />
+        <ResourceDictionary Source="../Controls/PasswordBox.xaml" />
+        <ResourceDictionary Source="../Controls/Progressbar.xaml" />
+        <ResourceDictionary Source="../Controls/Combobox.xaml" />
+        <ResourceDictionary Source="../Controls/Button.xaml" />
+        <ResourceDictionary Source="../Controls/ButtonPrimary.xaml" />
+        <ResourceDictionary Source="../Controls/ButtonInfo.xaml" />
+        <ResourceDictionary Source="../Controls/ButtonSuccess.xaml" />
+        <ResourceDictionary Source="../Controls/ButtonWarning.xaml" />
+        <ResourceDictionary Source="../Controls/ButtonDanger.xaml" />
+        <ResourceDictionary Source="../Controls/SwitchButton.xaml" />
+        <ResourceDictionary Source="../Controls/DataGrid.xaml" />
+        <ResourceDictionary Source="../Controls/DatePicker.xaml" />
+        <ResourceDictionary Source="../Controls/MenuTabControl.xaml" />
+        <ResourceDictionary Source="../Controls/TabItem.xaml" />
+        <ResourceDictionary Source="../Controls/TabControl.xaml" />
+        <ResourceDictionary Source="../Controls/RadialProgressBar.xaml" />
+        <ResourceDictionary Source="../Controls/ListView.xaml" />
+        <ResourceDictionary Source="../Controls/Images.xaml" />
+        <ResourceDictionary Source="../Controls/DarkImages.xaml" />
+		<ResourceDictionary Source="../Controls/MenuItem.xaml" />
+        <ResourceDictionary Source="../Controls/ContextMenu.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="AddButtonNormalStyle" BasedOn="{StaticResource ButtonDefaultStyle}" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="100" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ContentPresenter Content="Добавить" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ToolTip" Value="Добавить" />
+    </Style>
+
+    <Style x:Key="ImportButtonNormalStyle" BasedOn="{StaticResource ButtonDefaultStyle}" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="100" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ContentPresenter Content="Импорт" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ToolTip" Value="Импорт" />
+    </Style>
+
+    <Style x:Key="ImportButtonSmallStyle" BasedOn="{StaticResource ButtonInfoStyle}" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="32" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ContentPresenter Content="{StaticResource ImportImage}" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ToolTip" Value="Импорт" />
+    </Style>
+
+    <Style x:Key="ExportButtonNormalStyle" BasedOn="{StaticResource ButtonDefaultStyle}" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="100" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ContentPresenter Content="Экспорт" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ToolTip" Value="Экспорт" />
+    </Style>
+
+    <Style x:Key="ExportButtonSmallStyle" BasedOn="{StaticResource ButtonInfoStyle}" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="32" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ContentPresenter Content="{StaticResource ExportImage}" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ToolTip" Value="Экспорт" />
+    </Style>
+
+    <Style x:Key="EditButtonNormalStyle" BasedOn="{StaticResource ButtonInfoStyle}" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="100" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ContentPresenter Content="Правка" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ToolTip" Value="Правка" />
+    </Style>
+
+    <Style x:Key="EditButtonSmallStyle" BasedOn="{StaticResource ButtonInfoStyle}" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="32" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ContentPresenter Content="{StaticResource EditImage}" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ToolTip" Value="Правка" />
+    </Style>
+
+    <Style x:Key="DeleteButtonNormalStyle" BasedOn="{StaticResource ButtonDangerStyle}" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="100" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ContentPresenter Content="Удалить" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ToolTip" Value="Удалить" />
+    </Style>
+
+    <Style x:Key="DeleteButtonSmallStyle" BasedOn="{StaticResource ButtonDangerStyle}" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="32" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ContentPresenter Content="{StaticResource BinImage}" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ToolTip" Value="Удалить" />
+    </Style>
+
+    <Style x:Key="RefreshButtonNormalStyle" BasedOn="{StaticResource ButtonDefaultStyle}" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="100" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ContentPresenter Content="Обновить" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ToolTip" Value="Обновить" />
+    </Style>
+
+    <Style x:Key="RefreshButtonSmallStyle" BasedOn="{StaticResource ButtonDefaultStyle}" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="32" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ContentPresenter Content="{StaticResource RefreshImage}" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ToolTip" Value="Обновить" />
+    </Style>
+
+    <Style x:Key="ReportButtonNormalStyle" BasedOn="{StaticResource ButtonInfoStyle}" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="100" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ContentPresenter Content="Отчеты" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ToolTip" Value="Отчеты" />
+    </Style>
+
+    <Style x:Key="ReportButtonSmallStyle" BasedOn="{StaticResource ButtonInfoStyle}" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="32" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ContentPresenter Content="{StaticResource ReportImage}" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ToolTip" Value="Отчеты" />
+    </Style>
+
+    <Style x:Key="FilterButtonNormalStyle" BasedOn="{StaticResource ButtonDefaultStyle}" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="100" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ContentPresenter Content="Фильтр" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ToolTip" Value="Фильтр" />
+    </Style>
+
+    <Style x:Key="FilterButtonSmallStyle" BasedOn="{StaticResource ButtonDefaultStyle}" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="32" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ContentPresenter Content="{StaticResource FilterImage}" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ToolTip" Value="Фильтр" />
+    </Style>
+
+    <Style x:Key="SearchButtonNormalStyle" BasedOn="{StaticResource ButtonInfoStyle}" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="100" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ContentPresenter Content="Поиск" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ToolTip" Value="Поиск" />
+    </Style>
+
+    <Style x:Key="SearchButtonSmallStyle" BasedOn="{StaticResource ButtonInfoStyle}" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="32" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ContentPresenter Content="{StaticResource SearchImage}" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ToolTip" Value="Поиск" />
+    </Style>
+
+    <Style x:Key="MoveButtonSmallStyle" BasedOn="{StaticResource ButtonInfoStyle}" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="32" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ContentPresenter Content="{StaticResource MoveImage}" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ToolTip" Value="Переместить" />
+    </Style>
+
+    <Style x:Key="OkButtonNormalStyle" BasedOn="{StaticResource ButtonDefaultStyle}" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="100" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ContentPresenter Content="ОК" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CancelButtonNormalStyle" BasedOn="{StaticResource ButtonDefaultStyle}" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="100" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ContentPresenter Content="Отмена" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SettingsButtonSmallStyle" BasedOn="{StaticResource ButtonDefaultStyle}" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="32" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ContentPresenter Content="{StaticResource FilterImage}" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ToolTip" Value="Фильтр" />
+    </Style>
+
+    <!-- Stock Styles: TextBlock Style -->
+
+    <Style x:Key="DialogTitleTextBlockStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource BootstrapGrayColor3}" />
+        <Setter Property="Margin" Value="4" />
+        <Setter Property="FontSize" Value="21.333" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="DialogTextBlockStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="Margin" Value="4" />
+        <Setter Property="FontSize" Value="13.333" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="RowDetailsTextBlockStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="Foreground" Value="{StaticResource DefaultBackground}" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="DialogTextBoxStyle" BasedOn="{StaticResource TextBoxStyle}" TargetType="{x:Type TextBox}">
+        <Setter Property="Margin" Value="4" />
+        <Setter Property="FontSize" Value="13.333" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="WindowTitleBlockStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="Margin" Value="4" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="21.333" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Foreground" Value="{StaticResource BootstrapGrayColor3}" />
+    </Style>
+
+</ResourceDictionary>

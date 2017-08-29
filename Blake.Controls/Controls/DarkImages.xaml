@@ -1,0 +1,20 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <BitmapImage x:Key="DarkBinBitmapImage" UriSource="../Dark/Bin.png" />
+    <BitmapImage x:Key="DarkEditBitmapImage" UriSource="../Dark/Edit.png" />
+    <BitmapImage x:Key="DarkExportBitmapImage" UriSource="../Dark/Export.png" />
+    <BitmapImage x:Key="DarkImportBitmapImage" UriSource="../Dark/Import.png" />
+    <BitmapImage x:Key="DarkMoveBitmapImage" UriSource="../Dark/Move.png" />
+    <BitmapImage x:Key="DarkPlusBitmapImage" UriSource="../Dark/Plus.png" />
+    <BitmapImage x:Key="DarkReportBitmapImage" UriSource="../Dark/Report.png" />
+
+    <Image x:Key="DarkBinImage" Source="{StaticResource DarkBinBitmapImage}" Width="16" Height="16" x:Shared="false" />
+    <Image x:Key="DarkEditImage" Source="{StaticResource DarkEditBitmapImage}" Width="16" Height="16" x:Shared="false" />
+    <Image x:Key="DarkExportImage" Source="{StaticResource DarkExportBitmapImage}" Width="16" Height="16" x:Shared="false" />
+    <Image x:Key="DarkImportImage" Source="{StaticResource DarkImportBitmapImage}" Width="16" Height="16" x:Shared="false" />
+    <Image x:Key="DarkMoveImage" Source="{StaticResource DarkMoveBitmapImage}" Width="16" Height="16" x:Shared="false" />
+    <Image x:Key="DarkPlusImage" Source="{StaticResource DarkPlusBitmapImage}" Width="16" Height="16" x:Shared="false" />
+    <Image x:Key="DarkReportImage" Source="{StaticResource DarkReportBitmapImage}" Width="16" Height="16" x:Shared="false" />
+
+</ResourceDictionary>

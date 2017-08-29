@@ -1,0 +1,61 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- From Usbacc Project -->
+    
+    <BitmapImage x:Key="BinBitmapImage" UriSource="../Images/Bin.png" />
+    <BitmapImage x:Key="EditBitmapImage" UriSource="../Images/Edit.png" />
+    <BitmapImage x:Key="FilterBitmapImage" UriSource="../Images/Filter.png" />
+    <BitmapImage x:Key="SearchBitmapImage" UriSource="../Images/Find.png" />
+    <BitmapImage x:Key="MoveBitmapImage" UriSource="../Images/Move.png" />
+    <BitmapImage x:Key="RefreshBitmapImage" UriSource="../Images/Refresh.png" />
+    <BitmapImage x:Key="SettingsBitmapImage" UriSource="../Images/Settings.png" />
+    <BitmapImage x:Key="StatusBitmapImage" UriSource="../Images/Status.png" />
+    <BitmapImage x:Key="DeviceAccountBitmapImage" UriSource="../Images/DeviceAccount.png" />
+    <BitmapImage x:Key="FlashBitmapImage" UriSource="../Images/Flash.png" />
+    <BitmapImage x:Key="ReportBitmapImage" UriSource="../Images/Report.png" />
+    <BitmapImage x:Key="ImportBitmapImage" UriSource="../Images/Import.png" />
+    <BitmapImage x:Key="ExportBitmapImage" UriSource="../Images/Export.png" />
+    <BitmapImage x:Key="LoginBitmapImage" UriSource="../Images/Login.png" />
+    <BitmapImage x:Key="KeyBitmapImage" UriSource="../Images/Key.png" />
+    
+
+    <Image x:Key="BinImage" Source="{StaticResource BinBitmapImage}" Width="16" Height="16" x:Shared="false" />
+    <Image x:Key="EditImage" Source="{StaticResource EditBitmapImage}" Width="16" Height="16" x:Shared="false" />
+    <Image x:Key="FilterImage" Source="{StaticResource FilterBitmapImage}" Width="16" Height="16" x:Shared="false" />
+    <Image x:Key="SearchImage" Source="{StaticResource SearchBitmapImage}" Width="16" Height="16" x:Shared="false" />
+    <Image x:Key="MoveImage" Source="{StaticResource MoveBitmapImage}" Width="16" Height="16" x:Shared="false" />
+    <Image x:Key="RefreshImage" Source="{StaticResource RefreshBitmapImage}" Width="16" Height="16" x:Shared="false" />
+    <Image x:Key="SettingsImage" Source="{StaticResource SettingsBitmapImage}" Width="24" Height="24" x:Shared="false" />
+    <Image x:Key="StatusImage" Source="{StaticResource StatusBitmapImage}" Width="24" Height="24" x:Shared="false" />
+    <Image x:Key="DeviceAccountImage" Source="{StaticResource DeviceAccountBitmapImage}" Width="24" Height="24" x:Shared="false" />
+    <Image x:Key="FlashImage" Source="{StaticResource FlashBitmapImage}" Width="24" Height="24" x:Shared="false" />
+    <Image x:Key="ReportImage" Source="{StaticResource ReportBitmapImage}" Width="16" Height="16" x:Shared="false" />
+    <Image x:Key="ImportImage" Source="{StaticResource ImportBitmapImage}" Width="16" Height="16" x:Shared="false" />
+    <Image x:Key="ExportImage" Source="{StaticResource ExportBitmapImage}" Width="16" Height="16" x:Shared="false" />
+    <Image x:Key="LoginImage" Source="{StaticResource LoginBitmapImage}" Width="16" Height="16" x:Shared="false" />
+    <Image x:Key="KeyImage" Source="{StaticResource KeyBitmapImage}" Width="16" Height="16" x:Shared="false" />
+
+    <!-- From Stock Project -->
+    
+    <BitmapImage x:Key="CardBitmapImage" UriSource="../Images/Card.png" />
+    <BitmapImage x:Key="DocumentBitmapImage" UriSource="../Images/Document.png" />
+    <BitmapImage x:Key="OwnerBitmapImage" UriSource="../Images/Owner.png" />
+    <BitmapImage x:Key="RepairBitmapImage" UriSource="../Images/Repair.png" />
+    <BitmapImage x:Key="StaffBitmapImage" UriSource="../Images/Staff.png" />
+    <BitmapImage x:Key="StockUnitBitmapImage" UriSource="../Images/StockUnit.png" />
+    <BitmapImage x:Key="UnitBitmapImage" UriSource="../Images/Unit.png" />
+    <BitmapImage x:Key="UserBitmapImage" UriSource="../Images/User.png" />
+    <BitmapImage x:Key="UserAccBitmapImage" UriSource="../Images/UserAcc.png" />
+
+    <Image x:Key="CardImage" Source="{StaticResource CardBitmapImage}" Width="24" Height="24" x:Shared="false" />
+    <Image x:Key="DocumentImage" Source="{StaticResource DocumentBitmapImage}" Width="24" Height="24" x:Shared="false" />
+    <Image x:Key="OwnerImage" Source="{StaticResource OwnerBitmapImage}" Width="24" Height="24" x:Shared="false" />
+    <Image x:Key="RepairImage" Source="{StaticResource RepairBitmapImage}" Width="24" Height="24" x:Shared="false" />
+    <Image x:Key="StaffImage" Source="{StaticResource StaffBitmapImage}" Width="24" Height="24" x:Shared="false" />
+    <Image x:Key="StockUnitImage" Source="{StaticResource StockUnitBitmapImage}" Width="24" Height="24" x:Shared="false" />
+    <Image x:Key="UnitImage" Source="{StaticResource UnitBitmapImage}" Width="24" Height="24" x:Shared="false" />
+    <Image x:Key="UserImage" Source="{StaticResource UserBitmapImage}" Width="16" Height="16" x:Shared="false" />
+    <Image x:Key="UserAccImage" Source="{StaticResource UserAccBitmapImage}" Width="24" Height="24" x:Shared="false" />
+
+</ResourceDictionary>
